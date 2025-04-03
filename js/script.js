@@ -5,8 +5,65 @@
 const countriesList = document.getElementById('countries-list');
 const url = 'https://restcountries.com/v3/all';
 
+const getCountries = async () => {
+    try{
+    const response =await fetch(url)
+    if(!response.ok) {
+        throw new Error(`Error: ${response.status}`)
+    }
+    const countries = await response.json()
 
-async function banderas() {
+    
+    countriesList.innerHTML = countryArray(countries).join("")
+    }catch (err) {
+        console.error(err)
+    }
+}
+
+getCountries()
+
+const templateCard = (name, flag) => {
+    const template =`
+        <div class="card">
+        <img src=${flag[1]} alt=${name}/>
+        <h2>${name}</h2>
+        </div>
+        `
+    return template
+}
+
+
+const countryArray = (countries) => {
+    const allCountries = countries.map(country => {
+        const {name: {common}, flags} = country
+        return templateCard(common,flags)
+    })
+    return allCountries
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*async function banderas() {
     try {
         const response = await fetch(url);
         if(!response.ok) {
@@ -52,4 +109,4 @@ async function banderas() {
 
 banderas()
 
-
+*/
