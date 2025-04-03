@@ -9,16 +9,31 @@ h1 {
   color: #333;
 }
 
-img {
-  width: 200px;
-  height: 150px;
-  display: flex;
-  flex-direction: row;
+div {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: row;
-  
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  text-align: center;
+}
+
+li img {
+  width: 150px;
+  height: auto;
+}

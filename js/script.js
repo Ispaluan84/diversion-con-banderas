@@ -25,6 +25,12 @@ async function banderas() {
             return 0;
         });
         bandera.forEach((pais) => {
+            const {side} = pais.car;
+            const infoBandera = {
+                ...pais,
+                car: `${side}`,
+            }
+            const {flag, capital, population, car} = infoBandera
             countriesList.innerHTML +=`
             <ul>
               <li>
@@ -32,12 +38,13 @@ async function banderas() {
                 <h2>${pais.name.official}</h2>
               </li>
             </ul>`
+            countriesList.addEventListener('click', (event) => {
+                if (event.target.tagName === 'IMG') {
+                    window.open()
+                }
+            })
         });
-        countriesList.addEventListener('click', (event) => {
-            if (event.target.tagName === 'IMG') {
-                window.open()
-            }
-        })
+        
         } catch (error) {
         console.log('Error al cargar', error)
         } 
