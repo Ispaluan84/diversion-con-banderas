@@ -9,7 +9,16 @@ h1 {
   color: #333;
 }
 
-p {
-  width: 150px;
+img {
+  width: 200px;
   height: 150px;
+  display: flex;
+  flex-direction: row;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  
+}
+

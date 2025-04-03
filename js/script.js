@@ -3,10 +3,12 @@
 //Al clickar alguna bandera, ventana flotante con info del Pais.(bandera,capital,población,lado por el que se circula)
 
 const countriesList = document.getElementById('countries-list');
+const url = 'https://restcountries.com/v3/all';
+
 
 async function banderas() {
     try {
-        const response = await fetch('https://restcountries.com/v3/all');
+        const response = await fetch(url);
         if(!response.ok) {
             throw new Error ('No hemos podido cargar la página', response.status)
         }
@@ -24,15 +26,23 @@ async function banderas() {
         });
         bandera.forEach((pais) => {
             countriesList.innerHTML +=`
-            <p>${pais.flags}</p>
-            <h2>${pais.name.official}</h2>`
-            
+            <ul>
+              <li>
+                <img src="${pais.flags[1]}" alt="${pais.name.official}"/>
+                <h2>${pais.name.official}</h2>
+              </li>
+            </ul>`
         });
-    } catch (error) {
+        countriesList.addEventListener('click', (event) => {
+            if (event.target.tagName === 'IMG') {
+                window.open()
+            }
+        })
+        } catch (error) {
         console.log('Error al cargar', error)
-
-    }
+        } 
 }
 
-banderas() 
+banderas()
+
 

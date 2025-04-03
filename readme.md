@@ -15,8 +15,8 @@ Tendrá este aspecto
 ![banderas](./img/banderas-2.png)
 
 ## API utilizada
-
-Esta aplicación utiliza la API de REST Countries para obtener información sobre los países. La URL de la API es [https://restcountries.com/v3/all](https://restcountries.com/v3/all).
+https://restcountries.com/v3/all](https://restcountries.com/v3/all).
+Esta aplicación utiliza la API de REST Countries para obtener información sobre los países. La URL de la API es [
 
 
 ## Notas y pistas
