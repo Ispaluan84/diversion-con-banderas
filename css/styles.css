@@ -9,31 +9,37 @@ h1 {
   color: #333;
 }
 
-div {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+#countries-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
 
-li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  text-align: center;
+.card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-li img {
-  width: 150px;
-  height: auto;
+.info {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000a3;
+}
+
+.visible {
+  display: flex;
+}
+
+.cardInfo {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
 }
